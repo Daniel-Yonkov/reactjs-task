@@ -1,0 +1,40 @@
+{
+  "name": "nodejs-tutorial",
+  "version": "1.0.0",
+  "description": "Nodejs introduction",
+  "main": "main.js",
+  "scripts": {
+    "start": "webpack-dev-server --mode development --host 0.0.0.0 --public 192.168.21.21:8080 --watch-poll",
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Daniel-Yonkov/reactjs-task.git"
+  },
+  "author": "Daniel Yonkov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Daniel-Yonkov/reactjs-task/issues"
+  },
+  "homepage": "https://github.com/Daniel-Yonkov/reactjs-task#readme",
+  "dependencies": {
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5",
+    "react-fontawesome": "^1.6.1"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-transform-object-rest-spread": "^6.20.2",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^2.1.1",
+    "html-webpack-plugin": "^3.2.0",
+    "prettier": "^1.16.4",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.2.1"
+  }
+}
