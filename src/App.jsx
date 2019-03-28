@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import AssignedSkills from "./AssignedSkills";
-
+import AssignCandidateSkillsModal from "./AssignCandidateSkillsModal";
 class App extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			showModal: false,
 			backendCandidateSkills: [
 				{ id: 1, name: "ReactJS" },
 				{ id: 2, name: "NodeJS" },
@@ -14,14 +13,11 @@ class App extends Component {
 			backendApprovedSkills: [
 				{ id: 1, name: "ReactJS" },
 				{ id: 2, name: "NodeJS" },
-				{ id: 3, name: "PHP" }
+				{ id: 4, name: "PHP" }
 			]
 		};
 		this.removeSkill = this.removeSkill.bind(this);
-	}
-
-	showSkillModal() {
-		this.setState({ ...this.state, showModal: true });
+		this.assignCandidateSkill = this.assignCandidateSkill.bind(this);
 	}
 
 	removeSkill(id) {
@@ -33,16 +29,23 @@ class App extends Component {
 			)
 		});
 	}
+	//should query backend to store the skill for the candidate
+	//currently it only stores it in the state.
+	assignCandidateSkill(skills) {
+		this.setState({
+			...this.state,
+			backendCandidateSkills: skills
+		});
+	}
 
 	render() {
 		return (
 			<div>
-				<section>
-					<h2>Skills</h2>
-					<button onClick={() => this.showSkillModal()}>
-						Add new skill
-					</button>
-				</section>
+				<AssignCandidateSkillsModal
+					candidateSkills={this.state.backendCandidateSkills}
+					approvedSkills={this.state.backendApprovedSkills}
+					assignCandidateSkill={this.assignCandidateSkill}
+				/>
 				{this.state.backendCandidateSkills.length > 0 &&
 					this.state.backendCandidateSkills.map(skill => (
 						<AssignedSkills
