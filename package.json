@@ -18,9 +18,12 @@
   },
   "homepage": "https://github.com/Daniel-Yonkov/reactjs-task#readme",
   "dependencies": {
+    "font-awesome": "^4.7.0",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
-    "react-fontawesome": "^1.6.1"
+    "react-fontawesome": "^1.6.1",
+    "react-modal": "^3.8.1",
+    "react-select": "^2.4.2"
   },
   "devDependencies": {
     "babel": "^6.23.0",
